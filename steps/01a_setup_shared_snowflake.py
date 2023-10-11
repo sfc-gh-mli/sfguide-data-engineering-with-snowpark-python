@@ -8,10 +8,10 @@ sys.path.append(parent_dir)
 from utils import snowpark_utils
 session = snowpark_utils.get_snowpark_session()
 
-## replace 'TEST' with your FIRST NAME
+## replace 'TEST' with your NAME
 MY_ID =  'TEST'
 MY_WAREHOUSE = MY_ID +'_WH'
-MY_DB = 'DB_'+ MY_ID
+MY_DB = MY_ID + '_DB'
 
 #create warehouse and use it
 session.sql("create or replace warehouse "+MY_WAREHOUSE+" warehouse_type = standard warehouse_size = 'LARGE' auto_suspend = 600").collect()
